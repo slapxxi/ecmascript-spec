@@ -30,6 +30,11 @@ describe('String', () => {
       `;
       expect(result).to.eq('\n        test\n      ');
     });
+
+    it('accepts raw strings', function () {
+      const result = String.raw`\n`;
+      expect(result).to.eq('\\n');
+    });
   });
 
   describe('unicode code point escape', () => {
