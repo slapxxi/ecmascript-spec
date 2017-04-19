@@ -59,4 +59,22 @@ describe('String', () => {
       expect('\u{1F680}').to.eq('\uD83D\uDE80');
     });
   });
+
+  describe('iteration', () => {
+    it('allows to iterate over chars', () => {
+      const result = [];
+      for (const ch of 'test') {
+        result.push(ch);
+      }
+      expect(result).to.eql(['t', 'e', 's', 't']);
+    });
+
+    it('allows to use spread operator to turn into array', () => {
+      expect([...'abc']).to.eql(['a', 'b', 'c']);
+    });
+
+    it('honors unicode code points', () => {
+      expect([...'x\uD83D\uDE80y'].length).to.eq(3);
+    });
+  });
 });
