@@ -5,11 +5,19 @@ describe('String', () => {
     it('returns true if starts with specified string', () => {
       expect('abc'.startsWith('a')).to.eq(true);
     });
+
+    it('allows to specify position where to start', () => {
+      expect('abc'.startsWith('b', 1)).to.eq(true);
+    });
   });
 
   describe('endsWith()', () => {
     it('returns true if ends with specified string', () => {
       expect('abc'.endsWith('bc')).to.eq(true);
+    });
+
+    it('allows to specify position where to start', () => {
+      expect('abc'.endsWith('c', 3)).to.eq(true);
     });
   });
 
@@ -17,6 +25,11 @@ describe('String', () => {
     it('returns true if includes specified string', () => {
       expect('test'.includes('es')).to.eq(true);
     });
+
+    it('allows to specify position where to start', () => {
+      expect('abc test'.includes('test', 3)).to.eq(true);
+    });
+  });
   });
 
   describe('template literal', () => {
@@ -31,9 +44,8 @@ describe('String', () => {
       expect(result).to.eq('\n        test\n      ');
     });
 
-    it('accepts raw strings', function () {
-      const result = String.raw`\n`;
-      expect(result).to.eq('\\n');
+    it('accepts raw strings', () => {
+      expect(String.raw`\n`).to.eq('\\n');
     });
   });
 
