@@ -57,6 +57,13 @@ describe('String', () => {
       const v = 'test';
       expect(`\`${v}\``).to.eq('`test`');
     });
+
+    it('can be used with tag functions', () => {
+      const tag = (parts, v1, v2) => [parts, v1, v2];
+      expect(tag`log: ${true} ${false}`).to.eql(
+        [['log: ', ' ', ''], true, false],
+      );
+    });
   });
 
   describe('unicode code point escape', () => {
