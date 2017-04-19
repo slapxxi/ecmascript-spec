@@ -77,4 +77,10 @@ describe('String', () => {
       expect([...'x\uD83D\uDE80y'].length).to.eq(3);
     });
   });
+
+  describe('codePointAt()', () => {
+    it('returns code point of char', () => {
+      expect('x\uD83D\uDE80y'.codePointAt(1).toString(16)).to.eq('1f680');
+    });
+  });
 });
