@@ -83,4 +83,10 @@ describe('String', () => {
       expect('x\uD83D\uDE80y'.codePointAt(1).toString(16)).to.eq('1f680');
     });
   });
+
+  describe('.fromCodePoint()', () => {
+    it('returns string from code points', () => {
+      expect(String.fromCodePoint(0x78, 0x1f680)).to.eq('x\uD83D\uDE80');
+    });
+  });
 });
