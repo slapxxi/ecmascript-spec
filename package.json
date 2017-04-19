@@ -1,0 +1,27 @@
+{
+  "name": "ecmascript-spec",
+  "version": "1.0.0",
+  "description": "ES specification tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "export NODE_ENV=test && mocha --require ./spec/test-helper --recursive ./spec",
+    "watch": "export NODE_ENV=test && mocha --require ./spec/test-helper --recursive ./spec --watch --growl"
+  },
+  "keywords": [
+    "es",
+    "ecmascript",
+    "mocha"
+  ],
+  "author": "Slava Pavlutin",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
