@@ -30,6 +30,11 @@ describe('String', () => {
       expect('abc test'.includes('test', 3)).to.eq(true);
     });
   });
+
+  describe('repeat()', () => {
+    it('repeats string', () => {
+      expect('a'.repeat(3)).to.eq('aaa');
+    });
   });
 
   describe('template literal', () => {
