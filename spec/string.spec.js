@@ -52,6 +52,11 @@ describe('String', () => {
     it('accepts raw strings', () => {
       expect(String.raw`\n`).to.eq('\\n');
     });
+
+    it('accepts escape sequences', () => {
+      const v = 'test';
+      expect(`\`${v}\``).to.eq('`test`');
+    });
   });
 
   describe('unicode code point escape', () => {
